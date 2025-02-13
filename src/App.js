@@ -101,14 +101,13 @@ function App() {
 
   useEffect(()=> {
       if (turn === 'computer') {
-        window.alert('Computer is thinking')
         setTimeout(() => {
           if (dealerScore >= 17) {
             stay()
           } else {
             hit()
           }
-        }, [3000])
+        }, [1000])
       }
   
       winnerWinner()
@@ -130,8 +129,8 @@ function App() {
          </Stack>
          <Box>
           <div>Hand</div>
-            <Button variant="text" onClick={hit}>HIT</Button>
-            <Button variant="text" onClick={stay}>STAY</Button>
+            <Button variant="text" onClick={hit} disabled={turn==='computer'? true: false}>HIT</Button>
+            <Button variant="text" onClick={stay} disabled={turn==='computer'? true: false}>STAY</Button>
           </Box>
       </center>
     </div>
