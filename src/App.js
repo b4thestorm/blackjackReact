@@ -44,7 +44,11 @@ function App() {
   }
 
   const stay = () => {
-    setTurn(!turn)
+    if (turn === 'human') {
+      setTurn('computer')
+    } else {
+      setTurn('human')
+    }
   }
 
   const scoreHand = (card) => {
